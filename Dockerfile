@@ -1,4 +1,4 @@
-FROM debian:12.4-slim
+FROM debian:12.5-slim
 
 LABEL org.opencontainers.image.authors='Armin Radmüller'
 
@@ -25,6 +25,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 ADD ./assets /
 
 RUN chmod +x /usr/local/bin/entrypoint.sh && \
+    chmod +x /usr/local/bin/healthcheck.sh && \
     chmod +x /usr/local/bin/setup.sh && \
     chmod +x /usr/local/bin/start_apache2.sh && \
     chmod +x /usr/local/bin/start_cron.sh

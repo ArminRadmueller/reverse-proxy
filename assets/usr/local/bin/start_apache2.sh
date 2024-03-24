@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -n "Cleanup apache2 PID file..."
+echo -n "Cleanup Apache PID file..."
 
 RunningPID=$(pidof apache2)
 if [ "$RunningPID" -gt 0 ]
