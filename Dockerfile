@@ -1,4 +1,4 @@
-FROM debian:12.5-slim
+FROM debian:13.6-slim
 
 LABEL org.opencontainers.image.authors='Armin Radmüller'
 
@@ -6,7 +6,7 @@ ENV TZ='Europe/Rome' \
     LANG=C.UTF-8
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt-get update && apt-get upgrade && \
+    apt-get update && apt-get upgrade -y && \
     apt-get install -yq cron locales netcat-traditional procps supervisor \
                         apache2 apache2-utils certbot python3-certbot-apache openssl && \
     apt-get autoremove -y && apt-get clean && rm -Rf /var/lib/apt/lists/* && \
