@@ -1,0 +1,11 @@
+services:
+
+  reverse-proxy:
+    container_name: reverse-proxy
+    image: arminradmueller/reverse-proxy:0.0.1
+    ports:
+      - "80:80/tcp"
+      - "443:443/tcp"
+    volumes:
+      - './config:/etc/apache2/conf.d:ro'
+    restart: always
