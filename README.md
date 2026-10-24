@@ -2,7 +2,7 @@
 
 Die erste Generation des Loxone Miniservers unterstützt kein TLS und folglich keine Anfragen gegen APIs, welche auf https://... hören. Die nachfolgende Apache Reverse Proxy Konfiguration hilft einen Workaround dafür zu implementieren.
 
-Der "HTTP header" des virtuellen Ausgangs muss der wie folgt konfiguriert werden:
+Der "HTTP header" des virtuellen Ausgangs muss wie folgt konfiguriert werden:
 
 ```
 Accept: application/json 
