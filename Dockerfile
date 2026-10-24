@@ -1,6 +1,8 @@
-FROM debian:13.6-slim
+FROM debian:13.7-slim
 
-LABEL org.opencontainers.image.authors='Armin Radmüller'
+LABEL org.opencontainers.image.authors='Armin Radmüller' \
+      org.opencontainers.image.url='https://github.com/ArminRadmueller/reverse-proxy'
+
 
 ENV TZ='Europe/Rome' \
     LANG=C.UTF-8
@@ -14,7 +16,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     # cleanup demo environment
     rm -Rf /etc/apache2/* \
     rm -f /var/www/html/index.html \
-    # purge unnecessary data (Cleanup)
+    # purge unnecessary data (cleanup)
     rm -R /var/log/* && \
     rm -R /etc/logrotate.d/* && \
     mkdir -p /var/log/supervisor && \
