@@ -26,7 +26,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 
 ADD ./assets /
 
-RUN chmod +x /usr/local/bin/entrypoint.sh && \
+RUN [ -d /var/log/apache2 ] || mkdir -p /var/log/apache2 && \
+    chmod +x /usr/local/bin/entrypoint.sh && \
     chmod +x /usr/local/bin/healthcheck.sh && \
     chmod +x /usr/local/bin/setup.sh && \
     chmod +x /usr/local/bin/start_apache2.sh && \

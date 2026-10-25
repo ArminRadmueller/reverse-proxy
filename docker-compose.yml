@@ -2,7 +2,7 @@ services:
 
   reverse-proxy:
     container_name: reverse-proxy
-    image: arminradmueller/reverse-proxy:0.0.1
+    image: arminradmueller/reverse-proxy:latest
     ports:
       - "80:80/tcp"
       - "443:443/tcp"

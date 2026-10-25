@@ -14,6 +14,8 @@ wobei die Header Variable "TargetURL" den korrekten Zieladresse enthalten muss.
 
 ## loxone-proxy.conf
 
+Erstelle eine Datei ./config/loxone-proxy.conf mit folgendem Inhalt:
+
 ```apache
 ProxyRequests Off
 ProxyPreserveHost Off
